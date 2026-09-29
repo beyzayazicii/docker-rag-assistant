@@ -1,0 +1,5 @@
+# Windows (Windows ML hızlandırma ile). macOS/Linux için: foundry-local-sdk (denenmedi)
+foundry-local-sdk-winml==1.2.4
+
+# Sadece prepare_docs.py (dokümanları yeniden hazırlamak) için gerekli
+pyyaml==6.0.3

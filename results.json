@@ -1,0 +1,338 @@
+{
+  "kapalı": [
+    {
+      "id": 1,
+      "type": "answerable",
+      "question": "Bir volume nasıl oluştururum?",
+      "query": "Bir volume nasıl oluştururum?",
+      "answer": "```console\n$ docker volume create my-vol\n```\n\nBu komutla bir volume oluşturulur. Eğer isim belirtilmezse Docker rastgele bir isim üretir. Volume, Docker host üzerinde bir dizin olarak saklanır ve container'a mount edildikçe bu dizin container'a bağlanır.",
+      "hits": [
+        {
+          "score": 0.846,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker volume create > Description of docker volume create"
+        },
+        {
+          "score": 0.824,
+          "source": "storage-volumes.md",
+          "heading": "Volumes > Create and manage volumes"
+        },
+        {
+          "score": 0.806,
+          "source": "storage-volumes.md",
+          "heading": "Volumes"
+        }
+      ],
+      "top_score": 0.846,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking how to create a volume in Docker. Based on the context provided, I need to answer using only the information from the provided documents.\n\nFrom [1], [2], and [3], I can see that to create a volume, the command is `docker volume create` followed by the volume name.\n\nThe user wants a short answer (3-4 sentences max) and code blocks for commands.\n\nLet me formulate the answer in Turkish.",
+      "time_total": 31.4,
+      "time_first_token": 24.0,
+      "source_hit": true,
+      "command_hit": true
+    },
+    {
+      "id": 2,
+      "type": "answerable",
+      "question": "Container'ın 80 portunu host'taki 8080 portuna nasıl yayınlarım?",
+      "query": "Container'ın 80 portunu host'taki 8080 portuna nasıl yayınlarım?",
+      "answer": "Model bu soru üzerinde düşünürken süre/uzunluk sınırına ulaştı ve cevap üretemedi. Soruyu daha kısa veya tek bir konuya odaklı sormayı deneyin.",
+      "hits": [
+        {
+          "score": 0.772,
+          "source": "publishing-ports.md",
+          "heading": "Publishing and exposing ports > Try it out > Use the Docker CLI"
+        },
+        {
+          "score": 0.762,
+          "source": "publishing-ports.md",
+          "heading": "Publishing and exposing ports > Explanation > Publishing ports"
+        },
+        {
+          "score": 0.758,
+          "source": "publishing-ports.md",
+          "heading": "Publishing and exposing ports > Explanation > Publishing to ephemeral ports"
+        }
+      ],
+      "top_score": 0.772,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "Okay, let me break down the user's question. They want to know how to publish the container's port 80 to the host's port 8080. Looking at the provided context, specifically from the publishing-ports.md document.\n\nFirst, I need to check the relevant sections. In section [1], under \"Use the Docker CLI\", there's a command example: `docker run -d -p 8080:80 docker/welcome-to-docker`. It explains that the first port (8080) is the host port, and the second (80) is the container port. \n\nThen, section [2] under \"Publishing ports\" reiterates the syntax with `-p HOST_PORT:CONTAINER_PORT`. The example given is `docker run -d -p 8080:80 nginx`, which matches the user's question. \n\nSo the answer should be straightforward. The user needs to use the `-p` flag with the host port first, then the container port. The command should be in a code block. Also, need to mention that this binds the host's 8080 to the container's 80. \n\nWait, the user is asking specifically about container port 80 to host 8080. The example in the docs uses exactly that. So the answer is to use `docker run -d -p 8080:80 <image>`. \n\nI need to make sure not to add any extra info. Just the command and a brief explanation. But the user's question is direct, so maybe just the command. However, the rules say to keep it short, 3-4 sentences. Let me check the examples again. \n\nIn section [1], step 2, the command is given. Then section [2] explains the syntax. So the answer should reference that. But since the user is asking how to do it, the answer is the command. \n\nSo the response should be: Use the `-p` flag with the host port first, then container port. Provide the command. Maybe mention that this binds 8080 on host to 80 in container. But keep it concise. \n\nWait, the rules say to not add extra info. So just the command and a brief sentence. Let me check the examples. The docs show the command and explain the ports. But the user's question is how to publish, so the answer is the command. \n\nSo the answer should be: \n\n```console\n$ docker run -d -p 8080:80 <image_name>\n```\n\nAnd explain that 8080 is host port, 80 is container port. But the user might not need the explanation. Wait, the rules say to keep it short, 3-4 sentences. So maybe:\n\nContainer'ın 80 portunu host'ta 8080 portuna yayınlamak için Docker CLI'de `-p 8080:80` parametresini kullanın. Bu komut, host üzerindeki 8080 portunu container'ın 80 portuna yönlendirir. Örnek olarak:\n\n```console\n$ docker run -d -p 8080:80 <image_name>\n```\n\nBut wait, the user's question is in Turkish, so the answer should be in Turkish. Also, the rules say not to translate technical terms. So \"host port\" and \"container port\" should remain as is. \n\nWait, the rules say: \"Docker komutlarını, dosya adlarını, seçenekleri ve teknik terimleri (container, image, volume, Dockerfile, network, Compose, bind mount, registry vb.) çevirme; olduğu gibi bırak.\" So terms like host port, container port should not be translated. But in the answer, maybe use the terms as per the docs. \n\nLooking at the docs, in section [2], it says: \"HOST_PORT: The port number on your host machine where you want to receive traffic\" and \"CONTAINER_PORT: The port number within the container that's listening for connections\". So in the answer, maybe use those terms. But the user's question is in Turkish, so the answer should be in Turkish, but technical terms remain. \n\nSo the answer would be: \n\nContainer'ın 80 portunu host üzerindeki 8080 portuna yayınlamak için Docker CLI'de `-p 8080:80` parametresini kullanın. Bu komut, host üzerindeki 8080 portunu container'ın 80 portuna yönlendirir. Örnek olarak:\n\n```console\n$ docker run -d -p 8080:80 <image_name>\n```\n\nBut wait, the docs use `HOST_PORT` and `CONTAINER_PORT` as placeholders. So in the answer, maybe specify that the first number is host port, second is container port. \n\nBut the user's question is specific: container's 80 to host's 8080. So the answer should directly state the command. \n\nAlso, the rules say to keep it to 3-4 sentences. So maybe:\n\nContainer'ın 80 portunu host üzerindeki 8080 portuna yayınlamak için Docker CLI'de `-p 8080:80` parametresini kullanın. Bu komut, host üzerindeki 8080 portunu container'ın 80 portuna yönlendirir. Örnek olarak:\n\n```console\n$ docker run -d -p 8080:80 <image_name>\n```\n\nBut the user might not need the explanation. However, the docs explain the ports. But the rules say to keep it short. Maybe just the command and a brief sentence. \n\nAlternatively, since the docs have the exact example, maybe just state the command and mention that the first port is host, second is container. \n\nBut the user's question is in Turkish, so the answer should be in Turkish. Let me check the rules again. \n\nRule 3: Do not translate technical terms. So \"host port\" and \"container port\" should remain as is. But in the answer, maybe use the terms as per the docs. \n\nWait, the docs use \"HOST_PORT\" and \"CONTAINER_PORT\" as placeholders. So in the answer, maybe say: \n\nHost port olarak 8080, container port olarak 80 kullanılır. \n\nBut the user's question is in",
+      "time_total": 177.0,
+      "time_first_token": 177.0,
+      "source_hit": true,
+      "command_hit": false
+    },
+    {
+      "id": 3,
+      "type": "answerable",
+      "question": "Bir container'ın loglarını canlı olarak nasıl takip ederim?",
+      "query": "Bir container'ın loglarını canlı olarak nasıl takip ederim?",
+      "answer": "Bir container'ın loglarını canlı olarak takip etmek için `docker logs --follow` komutunu kullanabilirsiniz. Bu komut container'ın STDOUT ve STDERR çıktısını sürekli akış halinde izler.\n\n```console\ndocker logs --follow CONTAINER\n```",
+      "hits": [
+        {
+          "score": 0.807,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker container logs > Description of docker container logs"
+        },
+        {
+          "score": 0.766,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker container logs"
+        },
+        {
+          "score": 0.751,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker container logs > Examples of docker container logs > Stream log output  (-f, --follow)"
+        }
+      ],
+      "top_score": 0.807,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking how to follow/stream logs of a container in real-time. Based on the context provided:\n\nFrom [3], I can see that `docker logs --follow` command will continue streaming the new output from the container's `STDOUT` and `STDERR`.\n\nThis is the information I need to answer. The user wants to know how to follow logs live.\n\nI should provide a concise answer in Turkish, with a code block showing the command, and keep it to 3-4 sentences maximum.",
+      "time_total": 27.1,
+      "time_first_token": 19.9,
+      "source_hit": true,
+      "command_hit": true
+    },
+    {
+      "id": 4,
+      "type": "answerable",
+      "question": "Dockerfile'dan bir image build edip ona nasıl etiket (tag) veririm?",
+      "query": "Dockerfile'dan bir image build edip ona nasıl etiket (tag) veririm?",
+      "answer": "Dockerfile'dan build edilen bir image'ı etiketlemek için `docker image tag` komutunu kullanabilirsiniz.\n\n```console\ndocker image tag my-username/my-image another-username/another-image:latest\n```\n\nBu komut, mevcut image'ın yeni bir etiketini ekler. Eğer build sırasında etiketlemek isterseniz, `docker build -t image:tag .` formatını kullanabilirsiniz.",
+      "hits": [
+        {
+          "score": 0.786,
+          "source": "build-tag-and-publish-an-image.md",
+          "heading": "Build, tag, and publish an image > Explanation > Tagging images"
+        },
+        {
+          "score": 0.786,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker buildx build > Examples of docker buildx build > Tag an image (-t, --tag)"
+        },
+        {
+          "score": 0.777,
+          "source": "build-tag-and-publish-an-image.md",
+          "heading": "Build, tag, and publish an image > Explanation > Tagging images"
+        }
+      ],
+      "top_score": 0.786,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking how to tag an image after building it from a Dockerfile. This is a straightforward Docker question about tagging images.\n\nLooking at the context provided:\n- [1] mentions `docker build -t my-username/my-image .` for tagging during build\n- [1] also mentions `docker image tag my-username/my-image another-username/another-image:v1` for tagging after building\n- [2] shows examples with `docker buildx build -t docker/apache:2.0 .` and multiple tags with `-t` flag\n- [3] explains the image naming structure\n\nI need to provide a concise answer (3-4 sentences max) with a code block showing the command. The user wants to know how to tag after building, so I should show the `docker image tag` command.\n\nLet me write the answer in Turkish following all the rules.",
+      "time_total": 50.6,
+      "time_first_token": 39.5,
+      "source_hit": true,
+      "command_hit": true
+    },
+    {
+      "id": 5,
+      "type": "answerable",
+      "question": "Bind mount ile volume arasındaki fark nedir?",
+      "query": "Bind mount ile volume arasındaki fark nedir?",
+      "answer": "Bind mount ile volume arasındaki temel fark şudur:\n\nBind mount ile dosya veya klasör, host makineden container'a bağlanır. Volume ise Docker'un depolama dizininde yeni bir klasör oluşturulur ve Docker bunu yönetir.\n\n```yaml\nservices:\n  frontend:\n    image: node:lts\n    volumes:\n      - type: bind\n        source: ./static\n        target: /opt/app/static\n```",
+      "hits": [
+        {
+          "score": 0.809,
+          "source": "storage-bind-mounts.md",
+          "heading": "Bind mounts"
+        },
+        {
+          "score": 0.751,
+          "source": "storage-bind-mounts.md",
+          "heading": "Bind mounts > Use a bind mount with Docker Compose"
+        },
+        {
+          "score": 0.74,
+          "source": "storage-bind-mounts.md",
+          "heading": "Bind mounts > Syntax > Options for --volume"
+        }
+      ],
+      "top_score": 0.809,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking about the difference between bind mounts and volumes in Docker. I need to answer based only on the provided context documents.\n\nLooking at the context:\n[1] storage-bind-mounts.md | Bind mounts\n- When you use a bind mount, a file or directory on the host machine is mounted from the host into a container.\n- By contrast, when you use a volume, a new directory is created within Docker's storage directory on the host machine.\n- Docker creates and maintains this storage location, but containers access it directly using standard filesystem operations.\n\n[2] storage-bind-mounts.md | Bind mounts > Use a bind mount with Docker Compose\n- Shows example of bind mount with Docker Compose\n\n[3] storage-bind-mounts.md | Bind mounts > Syntax > Options for --volume\n- Shows syntax for volume options\n\nBased on this context, I can explain the difference:\n- Bind mount: mounts a file or directory from the host machine into a container\n- Volume: creates a new directory within Docker's storage directory on the host machine (Docker creates and maintains this)\n\nI need to keep the answer short (3-4 sentences max) and in Turkish, without translating technical terms.",
+      "time_total": 50.1,
+      "time_first_token": 38.4,
+      "source_hit": true,
+      "command_hit": null
+    },
+    {
+      "id": 6,
+      "type": "answerable",
+      "question": "Kullanıcı tanımlı bir bridge network nasıl oluştururum?",
+      "query": "Kullanıcı tanımlı bir bridge network nasıl oluştururum?",
+      "answer": "Kullanıcı tanımlı bir bridge network oluşturmak için `docker network create` komutunu kullanabilirsiniz.\n\n```console\n$ docker network create -d bridge my-net\n```\n\nBu network oluşturulduktan sonra yeni container'lar bu network'e bağlanabilir. Container'lar birbirleriyle container IP adresleri veya container isimleri üzerinden iletişim kurabilir.",
+      "hits": [
+        {
+          "score": 0.843,
+          "source": "network-bridge-driver.md",
+          "heading": "Bridge network driver > Use the default bridge network"
+        },
+        {
+          "score": 0.824,
+          "source": "network-bridge-driver.md",
+          "heading": "Bridge network driver"
+        },
+        {
+          "score": 0.767,
+          "source": "networking-overview.md",
+          "heading": "Networking overview > User-defined networks"
+        }
+      ],
+      "top_score": 0.843,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking how to create a user-defined bridge network in Docker. Based on the context provided:\n\nFrom [1] and [2]: The default bridge network is legacy and not recommended for production. User-defined bridge networks are superior.\n\nFrom [3]: User-defined networks allow containers to communicate using container IP addresses or container names.\n\nFrom the example in [3]:\n```console\n$ docker network create -d bridge my-net\n```\n\nThis shows how to create a user-defined bridge network using the `bridge` network driver.\n\nI need to answer in Turkish, keep it short (3-4 sentences max), and provide the command in a code block. I should only use the information from the context.",
+      "time_total": 35.9,
+      "time_first_token": 26.5,
+      "source_hit": true,
+      "command_hit": true
+    },
+    {
+      "id": 7,
+      "type": "answerable",
+      "question": "Docker Compose ile tanımlı uygulamayı nasıl başlatırım?",
+      "query": "Docker Compose ile tanımlı uygulamayı nasıl başlatırım?",
+      "answer": "Docker Compose ile tanımlı uygulamayı başlatmak için `docker compose up` komutunu kullanabilirsiniz.\n\n```console\ndocker compose up -d --build\n```\n\nBu komut çalıştırıldığında tüm servisler başlatılır, gerekli görseller indirilir, network ve volume oluşturulur.",
+      "hits": [
+        {
+          "score": 0.813,
+          "source": "what-is-docker-compose.md",
+          "heading": "What is Docker Compose? > Try it out > Start the application"
+        },
+        {
+          "score": 0.786,
+          "source": "what-is-docker-compose.md",
+          "heading": "What is Docker Compose? > Try it out > Start the application"
+        },
+        {
+          "score": 0.754,
+          "source": "what-is-docker-compose.md",
+          "heading": "What is Docker Compose? > Try it out"
+        }
+      ],
+      "top_score": 0.813,
+      "below_threshold": false,
+      "no_answer_strict": false,
+      "no_answer_loose": false,
+      "cjk": false,
+      "thinking": "The user is asking how to start an application defined with Docker Compose. Based on the context provided, I can see that the instructions mention using the `docker compose up` command to start the application.\n\nFrom the context:\n- Step 4 says: \"Use the `docker compose up` command to start the application\"\n- The command shown is: `docker compose up -d --build`\n\nI should provide this information in Turkish, following the rules:\n1. Only use information from the context\n2. Write in Turkish\n3. Keep Docker commands, file names, options, and technical terms as-is\n4. Put commands in code blocks with ```\n5. Keep it short (3-4 sentences max, one code block if needed)\n6. If context doesn't have enough info, use the specific phrase\n\nI have enough information from the context to answer this question.",
+      "time_total": 46.8,
+      "time_first_token": 38.1,
+      "source_hit": true,
+      "command_hit": true
+    },
+    {
+      "id": 8,
+      "type": "trap",
+      "question": "Docker Swarm'da bir servisi nasıl ölçeklendiririm?",
+      "query": "Docker Swarm'da bir servisi nasıl ölçeklendiririm?",
+      "answer": "Bu konuda dokümanlarda bilgi bulamadım.",
+      "hits": [
+        {
+          "score": 0.621,
+          "source": "overview.md",
+          "heading": "What is Docker? > What can I use Docker for? > Responsive deployment and scaling"
+        },
+        {
+          "score": 0.581,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker network create > Examples of docker network create > Run services on predefined networks"
+        },
+        {
+          "score": 0.555,
+          "source": "overview.md",
+          "heading": "What is Docker?"
+        }
+      ],
+      "top_score": 0.621,
+      "below_threshold": true,
+      "no_answer_strict": true,
+      "no_answer_loose": true,
+      "cjk": false,
+      "thinking": "",
+      "time_total": 0.6,
+      "time_first_token": 0.6
+    },
+    {
+      "id": 9,
+      "type": "trap",
+      "question": "Kubernetes'te bir pod nasıl oluşturulur?",
+      "query": "Kubernetes'te bir pod nasıl oluşturulur?",
+      "answer": "Bu konuda dokümanlarda bilgi bulamadım.",
+      "hits": [
+        {
+          "score": 0.515,
+          "source": "docker-cli-common.md",
+          "heading": "Common Docker CLI commands > docker volume create > Description of docker volume create"
+        },
+        {
+          "score": 0.513,
+          "source": "networking-overview.md",
+          "heading": "Networking overview > DNS services"
+        },
+        {
+          "score": 0.504,
+          "source": "storage-volumes.md",
+          "heading": "Volumes"
+        }
+      ],
+      "top_score": 0.515,
+      "below_threshold": true,
+      "no_answer_strict": true,
+      "no_answer_loose": true,
+      "cjk": false,
+      "thinking": "",
+      "time_total": 0.6,
+      "time_first_token": 0.6
+    },
+    {
+      "id": 10,
+      "type": "trap",
+      "question": "Podman ile Docker arasındaki farklar nelerdir?",
+      "query": "Podman ile Docker arasındaki farklar nelerdir?",
+      "answer": "Bu konuda dokümanlarda bilgi bulamadım.",
+      "hits": [
+        {
+          "score": 0.6,
+          "source": "overview.md",
+          "heading": "What is Docker?"
+        },
+        {
+          "score": 0.577,
+          "source": "overview.md",
+          "heading": "What is Docker? > Docker architecture > The Docker daemon"
+        },
+        {
+          "score": 0.567,
+          "source": "overview.md",
+          "heading": "What is Docker? > The underlying technology"
+        }
+      ],
+      "top_score": 0.6,
+      "below_threshold": true,
+      "no_answer_strict": true,
+      "no_answer_loose": true,
+      "cjk": false,
+      "thinking": "",
+      "time_total": 0.6,
+      "time_first_token": 0.6
+    }
+  ]
+}

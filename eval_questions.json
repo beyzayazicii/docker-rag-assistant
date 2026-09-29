@@ -1,0 +1,12 @@
+[
+  {"id": 1, "type": "answerable", "author": "claude", "question": "Bir volume nasıl oluştururum?", "expected_sources": ["storage-volumes.md", "docker-cli-common.md", "persisting-container-data.md"], "expected_commands": ["docker volume create"]},
+  {"id": 2, "type": "answerable", "author": "claude", "question": "Container'ın 80 portunu host'taki 8080 portuna nasıl yayınlarım?", "expected_sources": ["publishing-ports.md", "docker-cli-common.md"], "expected_commands": ["-p 8080:80", "--publish 8080:80"]},
+  {"id": 3, "type": "answerable", "author": "claude", "question": "Bir container'ın loglarını canlı olarak nasıl takip ederim?", "expected_sources": ["docker-cli-common.md"], "expected_commands": ["logs -f", "logs --follow"]},
+  {"id": 4, "type": "answerable", "author": "claude", "question": "Dockerfile'dan bir image build edip ona nasıl etiket (tag) veririm?", "expected_sources": ["build-tag-and-publish-an-image.md", "docker-cli-common.md"], "expected_commands": ["docker build -t", "docker build --tag", "docker buildx build -t"]},
+  {"id": 5, "type": "answerable", "author": "claude", "question": "Bind mount ile volume arasındaki fark nedir?", "expected_sources": ["storage-bind-mounts.md", "storage-volumes.md"], "expected_commands": []},
+  {"id": 6, "type": "answerable", "author": "claude", "question": "Kullanıcı tanımlı bir bridge network nasıl oluştururum?", "expected_sources": ["network-bridge-driver.md", "networking-overview.md", "docker-cli-common.md"], "expected_commands": ["docker network create"]},
+  {"id": 7, "type": "answerable", "author": "claude", "question": "Docker Compose ile tanımlı uygulamayı nasıl başlatırım?", "expected_sources": ["compose-getting-started.md", "what-is-docker-compose.md"], "expected_commands": ["docker compose up"]},
+  {"id": 8, "type": "trap", "author": "claude", "question": "Docker Swarm'da bir servisi nasıl ölçeklendiririm?", "expected_sources": [], "expected_commands": []},
+  {"id": 9, "type": "trap", "author": "claude", "question": "Kubernetes'te bir pod nasıl oluşturulur?", "expected_sources": [], "expected_commands": []},
+  {"id": 10, "type": "trap", "author": "claude", "question": "Podman ile Docker arasındaki farklar nelerdir?", "expected_sources": [], "expected_commands": []}
+]
